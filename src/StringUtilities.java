@@ -14,20 +14,20 @@ public class StringUtilities {
         }
     }
 
-    static String compress(String OriginalString) {
-        if (OriginalString == null || OriginalString.isEmpty()) {
+    static String compress(String originalString) {
+        if (originalString == null || originalString.isEmpty()) {
             System.out.println("Input string is empty.");
-            return OriginalString;
+            return originalString;
         }
 
         StringBuilder compressedString = new StringBuilder();
         int count = 1;
 
-        for (int i = 0; i < OriginalString.length(); i++) {
-            if (i + 1 < OriginalString.length() && OriginalString.charAt(i) == OriginalString.charAt(i + 1)) {
+        for (int i = 0; i < originalString.length(); i++) {
+            if (i + 1 < originalString.length() && originalString.charAt(i) == originalString.charAt(i + 1)) {
                 count++;
             } else {
-                compressedString.append(OriginalString.charAt(i));
+                compressedString.append(originalString.charAt(i));
                 if (count > 1) {
                     compressedString.append(count);
                 }
@@ -36,11 +36,11 @@ public class StringUtilities {
         }
 
         String result = compressedString.toString();
-        if (result.length() < OriginalString.length()) {
+        if (result.length() < originalString.length()) {
             return result;
         } else {
             System.out.println("Compressed string is not shorter than the original string!");
-            return OriginalString;
+            return originalString;
         }
     }
 
